@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARMANDO JIMENEZ Homepage</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+body {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background:
+linear-gradient(
+135deg,
+cyan 0%,
+white 30%,
+gray 50%,
+black 75%,
+cyan 100%
+);
+overflow: hidden;
+position: relative;
+}
+.logo {
+width: 80px;
+height: 80px;
+margin: 20px auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
+background: linear-gradient(
+135deg,
+#00ffff,
+#008cff
+);
+-radius: 50%;
+box-shadow:0 8px 20px rgba(0, 140, 255, 0.4);
+        }
+.logo span {
+            font-size: 40px;
+        }
+body::before {
+content: "";
+position: absolute;
+width: 500px;
+height: 500px;
+background: rgba(255, 255, 255, 0.12);
+border-radius: 50%;
+left: -180px;
+bottom: -200px;
+}
+body::after {
+content: "";
+position: absolute;
+width: 350px;
+height: 350px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 50%;
+right: -100px;
+top: -100px;
+}
+.container {
+width: 90%;
+max-width: 850px;
+text-align: center;
+z-index: 2;
+}
+.welcome-card {
+background: rgba(255, 255, 255, 0.88);
+backdrop-filter: blur(10px);
+padding: 40px 30px;
+border-radius: 4px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+margin-bottom: 30px;
+}
+.welcome-card h1 {
+color: black;
+font-size: 30px;
+margin-bottom: 25px;
+}
+.welcome-card p {
+color: black;
+line-height: 1.8;
+font-size: 15px;
+max-width: 700px;
+margin: auto;
+}
+.logout-btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+margin-top: 20px;
+padding: 12px 28px;
+border: none;
+cursor: pointer;
+background: red;
+color: black;
+font-weight: bold;
+border-radius: 3px;
+transition: 0.3s;
+}
+.logout-btn:hover {
+background: cyan;
+transform: translateY(-2px);
+}
+.navigation {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 12px;
+}
+.nav-btn {
+text-decoration: none;
+background: rgba(255, 255, 255, 0.9);
+color: red;
+padding: 12px 25px;
+min-width: 110px;
+border-radius: 4px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+transition: 0.3s;
+}
+.nav-btn i {
+margin-right: 7px;
+}
+.nav-btn:hover {
+background: black;
+color: #163b7a;
+transform: translateY(-3px);
+box-shadow:
+0 8px 18px rgba(0, 0, 0, 0.18);
+}
+@media (max-width: 600px) {
+.welcome-card {
+padding: 30px 20px;
+}
+.welcome-card h1 {
+font-size: 24px;
+}
+.navigation {
+flex-direction: column;
+align-items: center;
+}
+.nav-btn {
+width: 200px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="welcome-card">
+<h1>WELCOME to my HOMEPAGE!</h1>  
+<div class="logo">
+	<span>&#11088</span>
+    </div>                                                                     
+<p>
+Hello! My name is <strong>ARMANDO JIMENEZ</strong>,
+Welcome to my <strong>BASKETBALL SHOES</strong> website. enjoy helping customers find <strong>GOOD-QUALITY BASKETBALL SHOES</strong> that are <srtong>COMFORTABLE,</srtong>
+<strong>STYLISH,</strong> and suitable for their basketball projects and activities.
+<br>
+</p>
+<button class="logout-btn" onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+LOGOUT
+</button>
+</div>
+<div class="navigation">
+<a href="homepage.html" class="nav-btn">
+<i class="fa-solid fa-house"></i>
+HOME
+</a>
+<a href="About.html" class="nav-btn">
+<i class="fa-solid fa-circle-info"></i>
+ABOUT
+</a>
+<a href="Product.html" class="nav-btn">
+<i class="fa-solid fa-briefcase"></i>
+PRODUCT
+</a>
+<a href="Contact.html" class="nav-btn">
+<i class="fa-solid fa-envelope"></i>
+CONTACT
+</a>
+</div>
+</div>
+<script>
+function logout() {
+alert("You have been logged out!");
+window.location.href = "login.html";
+}
+</script>
+</body>
+</html>
