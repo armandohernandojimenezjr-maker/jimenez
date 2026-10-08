@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+ body {
+  min-height: 100vh;
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  padding: 30px;
+font-family: Arial, Helvetica, sans-serif;
+
+background: linear-gradient(
+                135deg,
+ #ffffff 0%,
+ #ff4b4b 25%,
+#777777 50%,
+ #111111 75%,
+#00ffff 100%
+            );
+
+color: #222;
+        }
+
+.contact-box {
+width: 650px;
+max-width: 100%;
+padding: 45px;
+ background: rgba(255, 255, 255, 0.92);
+border: 2px solid rgba(255, 255, 255, 0.7);
+ border-radius: 30px;
+text-align: center;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35),
+inset 0 1px 2px rgba(255, 255, 255, 0.8);
+ backdrop-filter: blur(10px);
+        }
+
+ .logo {
+width: 80px;
+height: 80px;
+margin: 20px auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
+background: linear-gradient(
+135deg,
+#00ffff,
+#008cff
+);
+-radius: 50%;
+box-shadow:0 8px 20px rgba(0, 140, 255, 0.4);
+        }
+.logo span {
+            font-size: 40px;
+        }
+ h1 {
+font-size: 38px;
+color: #111;
+margin-bottom: 10px;
+        }
+
+h2 {
+font-size: 24px;
+color: #333;
+margin-bottom: 15px;
+        }
+p {
+color: #555;
+line-height: 1.7;
+font-size: 16px;
+margin-bottom: 25px;
+        }
+form {
+text-align: left;
+        }
+
+.form-group {
+margin-bottom: 18px;
+        }
+
+label {
+display: block;
+margin-bottom: 7px;
+font-weight: bold;
+color: #222;
+        }
+
+input,
+textarea {
+width: 100%;
+padding: 13px 15px;
+border: 2px solid #ddd;
+border-radius: 12px;
+background-color: #f8f8f8;
+font-size: 15px;
+font-family: inherit;
+outline: none;
+transition: 0.3s;
+        }
+input:focus,
+textarea:focus {
+border-color: #00bcd4;
+background-color: white;
+box-shadow:0 0 0 4px rgba(0, 188, 212, 0.15);
+        }
+textarea {
+ height: 130px;
+resize: vertical;
+        }
+ button {
+ width: 100%;
+padding: 14px;
+ border: none;
+border-radius: 12px;
+background: linear-gradient(135deg,
+#00bcd4,
+#007bff
+);
+color: white;
+font-size: 17px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+box-shadow:0 8px 18px rgba(0, 123, 255, 0.3);
+}
+button:hover {
+transform: translateY(-3px);
+box-shadow:0 12px 25px rgba(0, 123, 255, 0.45);
+}
+button:active {
+transform: translateY(0);
+ }
+.home-link {
+display: inline-block;
+margin-top: 25px;
+color: #007bff;
+font-weight: bold;
+text-decoration: none;
+transition: 0.3s;
+}
+.home-link:hover {
+color: #0056b3;
+text-decoration: underline;
+}
+ @media (max-width: 600px) {
+ body {
+ padding: 15px;
+}
+.contact-box {
+padding: 30px 22px;
+border-radius: 25px;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+ font-size: 20px;
+}
+p {
+font-size: 14px;
+            }
+.logo {
+width: 70px;
+height: 70px;
+}
+.logo span {
+font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-box">
+
+        <h1>Contact Us!</h1>
+
+        <div class="logo">
+            <span>⭐</span>
+        </div>
+
+        <h2>Have Questions or Feedback? 💬</h2>
+
+        <p>
+            We love to hear from you! Your questions, suggestions,
+            and feedback are important to us. Feel free to reach out
+            and share your thoughts. We're always happy to listen
+            and connect with you.
+        </p>
+
+        <form>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Enter your message here..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit">
+                Send Message ✈️
+    </button>
+</form>
+<a href="homepage.html" class="home-link">
+ ← Back to Home
+</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00c6c6, #008b8b, #101820, #000);
+}
+
+.login-box{
+    width: 380px;
+    padding: 40px;
+    background: black;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    text-align: center;
+}
+.logo{
+	width: 90px;
+	padding: 90px;
+	align-items: center;
+    text-align: center;
+	font-size: 100px;
+ }
+
+.login-box h2{
+    color: red;
+    margin-bottom: 25px;
+}
+
+.input-box{
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    background: transparent;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.input-box:focus{
+    border-color: #00e5e5;
+    box-shadow: 0 0 10px #00e5e5;
+}
+
+.login-btn{
+    width: 100%;
+    padding: 13px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #00dada;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover{
+    background: white;
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="login-box">
+	<div class="logo"">
+	<span>&#127936<span>
+    </div>
+
+
+
+    <h2>WELCOME BACK!!</h2>
+
+    <input type="text" 
+           id="username" 
+		   class="input-box"
+           placeholder="Enter your Username"> 
+        
+
+   
+    <input type="password" 
+           id="password" 
+		   class="input-box"
+           placeholder="Enter your Password"> 
+         
+
+    <button class="login-btn" onclick="login()">
+        LOGIN
+    </button>
+
+</div>
+
+<script>
+
+function login(){
+    let correctUsername = "cgwapo";
+    let correctPassword = "4k";
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    if(username === correctUsername && password === correctPassword){
+	window.location.href="homepage.html";
+
+    } else {
+
+        alert("Incorrect Username or Password!");
+
+    }
+}
+
+</script>
+
+</body>
+</html>
