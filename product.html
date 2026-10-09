@@ -1,163 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Construction Supplies</title>
-	  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Shoes</title>
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(black, red, black, cyan);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .product-box {
-            width: 80%;
-            background: cyan;
-            margin-top: 50px;
-            padding: 30px;
-            border-radius: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                to bottom,
+                #ff0000,
+                #000000,
+                #00cfcf
+            );
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+
+        .navbar {
+            background-color: #ff0000;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: red;
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #00eeee;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        h2 {
             text-align: center;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .products {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 25px;
+            gap: 15px;
         }
 
-        .card {
-            background: black;
-            padding: 15px;
-            text-align: left;
+        .product {
+            background: white;
+            padding: 12px;
             border-radius: 8px;
-			background: white;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 8px #777;
         }
 
-        .card img {
+        .product img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-			color: black;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
 
+        .product h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .product p {
+            font-size: 12px;
+            margin-bottom: 12px;
         }
 
         .price {
-            font-size: 20px;
             font-weight: bold;
         }
 
-        .inquire {
-            width: 100%;
-            padding: 10px;
+        .buy {
+            display: block;
             background: red;
             color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .navigation {
-            margin: 20px;
-        }
-
-        .navigation a {
+            text-align: center;
             text-decoration: none;
-            background: white;
-            color: black;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
+            padding: 10px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .buy:hover {
+            background: darkred;
+        }
+
+        @media (max-width: 600px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .navbar {
+                gap: 4px;
+            }
+
+            .navbar a {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="product-box">
 
-    <h1><p>&#128095 BASKETBALL SHOES!</p></h1>
-    <p>Browse our available basketball shoes.</p>
+    <nav class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
 
-    <div class="products">
 
-        <div class="card">
-            <img src="sapatos.jpg" alt="Cement">
-            <h3>JORDAN SHOES</h3>
-            <p>High-quality jordan shoes projects.</p>
-            <p class="price"><p>&#8369 $8,095.000</p></p>
-            <button class="inquire">BUY NOW</button>
+    <div class="container" id="product">
+
+        <h2>👟 BASKETBALL SHOES!</h2>
+        <p class="subtitle">
+            Browse our available basketball shoes.
+        </p>
+
+        <div class="products">
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+                     alt="Jordan Shoes">
+                <h3>JORDAN SHOES</h3>
+                <p>High-quality Jordan shoes.</p>
+                <p class="price">₱ 8,095.00</p>
+                <a class="buy" href="contact.html">BUY NOW</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=400"
+                     alt="LeBron Shoes">
+                <h3>LEBRON JAMES SHOES</h3>
+                <p>High-quality LeBron shoes.</p>
+                <p class="price">₱ 10,895.00</p>
+                <a class="buy" href="contact.html">BUY NOW</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=400"
+                     alt="LaMelo Ball Shoes">
+                <h3>LAMELO BALL</h3>
+                <p>High-quality LaMelo shoes.</p>
+                <p class="price">₱ 4,895.00</p>
+                <a class="buy" href="contact.html">BUY NOW</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400"
+                     alt="Stephen Curry Shoes">
+                <h3>STEPHEN CURRY</h3>
+                <p>High-quality Stephen Curry shoes.</p>
+                <p class="price">₱ 5,895.00</p>
+                <a class="buy" href="contact.html">BUY NOW</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+                     alt="Kyrie Irving Shoes">
+                <h3>KYRIE IRVING</h3>
+                <p>High-quality Kyrie Irving shoes.</p>
+                <p class="price">₱ 5,895.00</p>
+                <a class="buy" href="contact.html">BUY NOW</a>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=400"
+                     alt="Kobe Bryant Shoes">
+                <h3>KOBE BRYANT</h3>
+                <p>High-quality Kobe Bryant shoes.</p>
+                <p class="price">₱ 5,895.00</p>
+                <a class="buy" href="contact.html">BUY NOW</a>
+            </div>
+
         </div>
-
-        <div class="card">
-            <img src="lebron.avif" alt="Hollow Blocks">
-            <h3>LEBRON JAMES SHOES</h3>
-            <p>High-quality jordan shoes projects.</p>
-            <p class="price"><p>&#8369  $10,895.000</p></p>
-            <button class="inquire">BUY NOW</button>
-        </div>
-
-        <div class="card">
-            <img src="lamelo.jpg" alt="Steel Bars">
-            <h3>LAMELO BALL</h3>
-            <p>High-quality lamelo shoes projects.</p>
-            <p class="price"><p>&#8369 $4,895.000</p></p>
-            <button class="inquire">BUY NOW</button>
-        </div>
-
-        <div class="card">
-            <img src="curry.webp" alt="Plywood">
-            <h3>STEPHEN CURRY</h3>
-            <p>>High-quality stephen curry shoes projects.</p>
-            <p class="price"><p>&#8369 $5,895.000</p></p>
-            <button class="inquire">BUY NOW</button>
-        </div>
-
-        <div class="card">
-            <img src="irving.webp" alt="Paint">
-            <h3>KYRIE IRVING</h3>
-            <p>>High-quality kyrie irving shoes projects.</p>
-            <p class="price"><p>&#8369 $5,895.000</p></p>
-            <button class="inquire">BUY NOW</button>
-        </div>
-
-        <div class="card">
-            <img src="mamba.jpg" alt="Construction Tools">
-            <h3>KOBE BRYAN</h3>
-            <p>High-quality kobe bryan shoes projects.</p>
-            <p class="price"><p>&#8369 $5,895.000</p></p>
-            <button class="inquire">BUY NOW</button>
-        </div>
-
     </div>
 
-</div>
-
-<div class="navigation">
-<a href="homepage.html" class="nav-btn">
-<i class="fa-solid fa-house"></i>
-Home
-</a>
-<a href="about.html" class="nav-btn">
-<i class="fa-solid fa-circle-info"></i>
-About
-</a>
-<a href="product.html" class="nav-btn">
-<i class="fa-solid fa-briefcase"></i>
-Product
-</a>
-<a href="contact.html" class="nav-btn">
-<i class="fa-solid fa-envelope"></i>
-Contact
-</a>
-</div>
-</div>
-
 </body>
-</html>
+	</html>
