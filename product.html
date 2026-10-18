@@ -7,9 +7,9 @@
 
 <style>
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -18,13 +18,14 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, red, #111);
-    color: #111;
+    background: linear-gradient(to bottom, #ff0000, #111111);
     padding: 20px;
+    color: #111;
 }
 
+/* NAVIGATION */
 nav {
-    background: #ff0808;
+    background: #ff0000;
     padding: 30px 10px;
     border-radius: 15px;
     display: flex;
@@ -46,6 +47,7 @@ nav a:hover {
     color: yellow;
 }
 
+/* MAIN SECTION */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -57,7 +59,7 @@ nav a:hover {
 h1 {
     text-align: center;
     font-size: 36px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .subtitle {
@@ -66,6 +68,7 @@ h1 {
     margin-bottom: 35px;
 }
 
+/* PRODUCT GRID */
 .products {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -80,6 +83,7 @@ h1 {
     display: flex;
     flex-direction: column;
     transition: 0.3s;
+    min-width: 0;
 }
 
 .card:hover {
@@ -88,13 +92,15 @@ h1 {
 
 .card img {
     width: 100%;
-    height: 150px;
+    height: 160px;
     object-fit: contain;
     margin-bottom: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
 }
 
 .card h2 {
-    font-size: 21px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -112,7 +118,6 @@ h1 {
 }
 
 .buy {
-    display: block;
     width: 100%;
     background: red;
     color: white;
@@ -120,27 +125,29 @@ h1 {
     padding: 15px 5px;
     font-size: 17px;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
+    border-radius: 3px;
 }
 
 .buy:hover {
     background: #b90000;
 }
 
+/* FOOTER */
 footer {
     color: white;
     text-align: center;
     padding: 30px 10px;
+    line-height: 2;
 }
 
+/* PHONE SCREEN */
 @media (max-width: 480px) {
     body {
         padding: 12px;
     }
 
     .container {
-        padding: 18px;
+        padding: 16px;
     }
 
     h1 {
@@ -164,28 +171,29 @@ footer {
     }
 
     .card h2 {
-        font-size: 16px;
-    }
-
-    .card p {
-        font-size: 14px;
-    }
-
-    .price {
         font-size: 15px;
     }
 
-    .buy {
+    .card p {
+        font-size: 13px;
+    }
+
+    .price {
         font-size: 14px;
+    }
+
+    .buy {
+        font-size: 13px;
         padding: 12px 3px;
     }
 
     nav {
         gap: 18px;
+        padding: 25px 5px;
     }
 
     nav a {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 </style>
@@ -193,6 +201,7 @@ footer {
 
 <body>
 
+<!-- NAVIGATION BAR -->
 <nav>
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
@@ -200,6 +209,7 @@ footer {
     <a href="#contact">CONTACT</a>
 </nav>
 
+<!-- HOME -->
 <section class="container" id="home">
 
     <h1>👟 BASKETBALL SHOES!</h1>
@@ -208,10 +218,12 @@ footer {
         Browse our available basketball shoes.
     </p>
 
+    <!-- PRODUCTS WILL APPEAR HERE -->
     <div class="products" id="products"></div>
 
 </section>
 
+<!-- FOOTER -->
 <footer id="contact">
     <h2>Basketball Shoes Shop</h2>
     <p>Thank you for visiting our website!</p>
@@ -219,143 +231,149 @@ footer {
 </footer>
 
 <script>
+
+// 20 BASKETBALL SHOE PRODUCTS
 const shoes = [
     {
         name: "JORDAN SHOES",
-        description: "High-quality Jordan shoes.",
+        description: "Stylish shoes for basketball players.",
         price: 8095,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c"
+        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "LEBRON JAMES SHOES",
-        description: "Comfortable shoes for powerful players.",
+        description: "Comfortable athletic footwear.",
         price: 10895,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "LAMELO BALL SHOES",
-        description: "Stylish shoes for creative players.",
+        description: "Bold and modern sneaker style.",
         price: 7295,
-        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
+        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "STEPHEN CURRY SHOES",
-        description: "Lightweight shoes for quick movement.",
+        description: "Sporty shoes for active players.",
         price: 6495,
-        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2"
+        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "NIKE BASKETBALL SHOES",
-        description: "Sporty design for everyday training.",
+        description: "Classic athletic design.",
         price: 5995,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+        image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "ADIDAS BASKETBALL SHOES",
-        description: "Comfort and style on the court.",
+        description: "Everyday comfort and sporty style.",
         price: 5495,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c"
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "PUMA BASKETBALL SHOES",
-        description: "Modern shoes for active players.",
+        description: "Modern shoes for sports lovers.",
         price: 4995,
-        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "KOBE SHOES",
-        description: "Designed for speed and precision.",
+        description: "Performance-inspired shoe design.",
         price: 9295,
-        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2"
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "KYRIE SHOES",
-        description: "Great style for quick direction changes.",
+        description: "Stylish footwear for quick players.",
         price: 6995,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "KEVIN DURANT SHOES",
-        description: "Performance-inspired basketball footwear.",
+        description: "Comfortable shoes for court practice.",
         price: 8795,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c"
+        image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "GIANNIS SHOES",
-        description: "Supportive shoes for explosive movement.",
+        description: "Sporty look for basketball fans.",
         price: 7495,
-        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
+        image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "JA MORANT SHOES",
-        description: "Bold style for fast players.",
+        description: "Fresh and fashionable sneakers.",
         price: 6295,
-        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2"
+        image: "https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "LUKA DONCIC SHOES",
-        description: "Comfortable footwear for court control.",
+        description: "Designed for everyday athletic style.",
         price: 7795,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "JAYSON TATUM SHOES",
-        description: "Sleek shoes for all-around play.",
+        description: "Sleek and sporty basketball footwear.",
         price: 6995,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c"
+        image: "https://images.unsplash.com/photo-1560769629-975ec94e6a6f?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "DAMIAN LILLARD SHOES",
-        description: "Sporty shoes made for training.",
+        description: "Great style for training sessions.",
         price: 5795,
-        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=85"
     },
     {
         name: "ZION WILLIAMSON SHOES",
-        description: "A bold look for powerful players.",
+        description: "Bold footwear with a modern look.",
         price: 6595,
-        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2"
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=85"
     },
     {
         name: "ANTA BASKETBALL SHOES",
-        description: "Modern performance-inspired footwear.",
+        description: "Contemporary athletic shoe style.",
         price: 4595,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=85"
     },
     {
         name: "UNDER ARMOUR SHOES",
-        description: "Comfortable shoes for daily practice.",
+        description: "Comfortable shoes for practice.",
         price: 5295,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c"
+        image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=85"
     },
     {
         name: "NEW BALANCE SHOES",
-        description: "Fresh design with a sporty look.",
+        description: "Casual athletic sneakers.",
         price: 6195,
-        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
+        image: "https://images.unsplash.com/photo-1531310197839-ccf54634509e?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "CLASSIC COURT SHOES",
-        description: "A classic look for basketball fans.",
+        description: "Classic style for shoe collectors.",
         price: 3995,
-        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2"
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=90"
     }
 ];
 
+// DISPLAY ALL PRODUCTS
 const productContainer = document.getElementById("products");
 
-shoes.forEach((shoe, index) => {
-    const card = document.createElement("article");
+shoes.forEach(function(shoe) {
+
+    const card = document.createElement("div");
     card.className = "card";
 
-    const image = document.createElement("img");
-    image.src = shoe.image;
-    image.alt = shoe.name;
-    image.loading = "lazy";
+    const img = document.createElement("img");
+    img.src = shoe.image;
+    img.alt = shoe.name;
+    img.loading = "lazy";
 
-    image.onerror = function() {
+    // SHOW FALLBACK IF AN IMAGE FAILS
+    img.onerror = function() {
         this.onerror = null;
-        this.src = "https://placehold.co/400x250/eeeeee/222222?text=Basketball+Shoes";
+        this.src =
+          "https://placehold.co/400x250/eeeeee/222222?text=Basketball+Shoes";
     };
 
     const title = document.createElement("h2");
@@ -366,7 +384,8 @@ shoes.forEach((shoe, index) => {
 
     const price = document.createElement("div");
     price.className = "price";
-    price.textContent = "₱ " + shoe.price.toLocaleString("en-PH") + ".00";
+    price.textContent =
+        "₱ " + shoe.price.toLocaleString("en-PH") + ".00";
 
     const button = document.createElement("button");
     button.className = "buy";
@@ -376,14 +395,20 @@ shoes.forEach((shoe, index) => {
         alert(
             "Product: " + shoe.name +
             "\nPrice: ₱" + shoe.price.toLocaleString("en-PH") +
-            "\n\nThis is a demo website. No actual purchase was made."
+            "\n\nThis is a demo only. No purchase was made."
         );
     });
 
-    card.append(image, title, description, price, button);
+    card.appendChild(img);
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(price);
+    card.appendChild(button);
+
     productContainer.appendChild(card);
 });
+
 </script>
 
 </body>
-	</html>
+</html>
