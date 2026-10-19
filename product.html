@@ -1,163 +1,414 @@
-<div class="products">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basketball Shoes Shop</title>
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28e?auto=format&fit=crop&w=600&q=80" alt="Jordan shoes">
-        <h3>JORDAN SHOES</h3>
-        <p>Stylish shoes for basketball players.</p>
-        <div class="price">₱ 8,095.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Red sports shoes">
-        <h3>LEBRON JAMES SHOES</h3>
-        <p>Comfortable athletic footwear.</p>
-        <div class="price">₱ 10,895.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+html {
+    scroll-behavior: smooth;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Nike sneakers">
-        <h3>NIKE BASKETBALL</h3>
-        <p>Lightweight shoes for training.</p>
-        <div class="price">₱ 5,499.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff0000, #111111);
+    padding: 20px;
+    color: #111;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80" alt="Adidas sneakers">
-        <h3>ADIDAS BASKETBALL</h3>
-        <p>Sporty style with a comfortable fit.</p>
-        <div class="price">₱ 4,999.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+/* NAVIGATION */
+nav {
+    background: #ff0000;
+    padding: 30px 10px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 5px 15px #900;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80" alt="Classic court shoes">
-        <h3>CLASSIC COURT SHOES</h3>
-        <p>A timeless sneaker style.</p>
-        <div class="price">₱ 3,899.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80" alt="Street sneakers">
-        <h3>STREET BASKETBALL</h3>
-        <p>Fresh streetwear-inspired footwear.</p>
-        <div class="price">₱ 4,299.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+nav a:hover {
+    color: yellow;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="Classic sports shoes">
-        <h3>COURT CLASSIC</h3>
-        <p>Everyday comfort and sporty style.</p>
-        <div class="price">₱ 3,599.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+/* MAIN SECTION */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: #00e5e5;
+    border-radius: 15px;
+    padding: 30px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a6f?auto=format&fit=crop&w=600&q=80" alt="Modern sneakers">
-        <h3>PRO COURT SHOES</h3>
-        <p>Modern design for active players.</p>
-        <div class="price">₱ 4,599.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=600&q=80" alt="Athletic sneakers">
-        <h3>ELITE SNEAKERS</h3>
-        <p>Sporty footwear for everyday wear.</p>
-        <div class="price">₱ 5,199.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.subtitle {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80" alt="Fashion footwear">
-        <h3>STREET ELITE</h3>
-        <p>Casual shoes with a bold look.</p>
-        <div class="price">₱ 4,199.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+/* PRODUCT GRID */
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80" alt="Sport sneakers">
-        <h3>FAST BREAK SHOES</h3>
-        <p>Sport-inspired shoes for daily use.</p>
-        <div class="price">₱ 4,799.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 5px 12px #777;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    min-width: 0;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1506629905607-d9a4c9f7d6e1?auto=format&fit=crop&w=600&q=80" alt="Athletic shoes">
-        <h3>POWER PLAY SHOES</h3>
-        <p>Comfortable shoes for active days.</p>
-        <div class="price">₱ 5,699.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.card:hover {
+    transform: translateY(-5px);
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80" alt="Lifestyle sneakers">
-        <h3>ALL-STAR SNEAKERS</h3>
-        <p>A versatile look for sneaker lovers.</p>
-        <div class="price">₱ 3,999.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80" alt="Urban sneakers">
-        <h3>URBAN COURT</h3>
-        <p>Simple style for casual outfits.</p>
-        <div class="price">₱ 3,799.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80" alt="Performance sneakers">
-        <h3>PRO PERFORMANCE</h3>
-        <p>Sporty design for training sessions.</p>
-        <div class="price">₱ 6,299.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80" alt="Modern athletic shoes">
-        <h3>COURT LEGEND</h3>
-        <p>Classic-inspired everyday footwear.</p>
-        <div class="price">₱ 4,899.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&w=600&q=80" alt="Training sneakers">
-        <h3>TRAINING PRO</h3>
-        <p>Made for an active lifestyle.</p>
-        <div class="price">₱ 5,299.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.buy {
+    width: 100%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 15px 5px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 3px;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80" alt="Sports sneakers">
-        <h3>SLAM DUNK SHOES</h3>
-        <p>A bold look for basketball fans.</p>
-        <div class="price">₱ 6,899.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+.buy:hover {
+    background: #b90000;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Red performance sneakers">
-        <h3>RED THUNDER</h3>
-        <p>Stand out with a vibrant sporty look.</p>
-        <div class="price">₱ 5,899.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+/* FOOTER */
+footer {
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    line-height: 2;
+}
 
-    <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80" alt="Premium sneakers">
-        <h3>PREMIUM COURT</h3>
-        <p>A stylish finish for your shoe collection.</p>
-        <div class="price">₱ 7,499.00</div>
-        <a class="buy-btn" href="#contact">BUY NOW</a>
-    </div>
+/* PHONE SCREEN */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
 
-</div>
+    .container {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .products {
+        gap: 14px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card img {
+        height: 110px;
+    }
+
+    .card h2 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .buy {
+        font-size: 13px;
+        padding: 12px 3px;
+    }
+
+    nav {
+        gap: 18px;
+        padding: 25px 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#products">PRODUCT</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<!-- HOME -->
+<section class="container" id="home">
+
+    <h1>👟 BASKETBALL SHOES!</h1>
+
+    <p class="subtitle" id="about">
+        Browse our available basketball shoes.
+    </p>
+
+    <!-- PRODUCTS WILL APPEAR HERE -->
+    <div class="products" id="products"></div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <h2>Basketball Shoes Shop</h2>
+    <p>Thank you for visiting our website!</p>
+    <p>© 2026 Basketball Shoes Shop</p>
+</footer>
+
+<script>
+
+// 20 BASKETBALL SHOE PRODUCTS
+const shoes = [
+    {
+        name: "JORDAN SHOES",
+        description: "Stylish shoes for basketball players.",
+        price: 8095,
+        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "LEBRON JAMES SHOES",
+        description: "Comfortable athletic footwear.",
+        price: 10895,
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "LAMELO BALL SHOES",
+        description: "Bold and modern sneaker style.",
+        price: 7295,
+        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "STEPHEN CURRY SHOES",
+        description: "Sporty shoes for active players.",
+        price: 6495,
+        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "NIKE BASKETBALL SHOES",
+        description: "Classic athletic design.",
+        price: 5995,
+        image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "ADIDAS BASKETBALL SHOES",
+        description: "Everyday comfort and sporty style.",
+        price: 5495,
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "PUMA BASKETBALL SHOES",
+        description: "Modern shoes for sports lovers.",
+        price: 4995,
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "KOBE SHOES",
+        description: "Performance-inspired shoe design.",
+        price: 9295,
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "KYRIE SHOES",
+        description: "Stylish footwear for quick players.",
+        price: 6995,
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "KEVIN DURANT SHOES",
+        description: "Comfortable shoes for court practice.",
+        price: 8795,
+        image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "GIANNIS SHOES",
+        description: "Sporty look for basketball fans.",
+        price: 7495,
+        image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "JA MORANT SHOES",
+        description: "Fresh and fashionable sneakers.",
+        price: 6295,
+        image: "https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "LUKA DONCIC SHOES",
+        description: "Designed for everyday athletic style.",
+        price: 7795,
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "JAYSON TATUM SHOES",
+        description: "Sleek and sporty basketball footwear.",
+        price: 6995,
+        image: "https://images.unsplash.com/photo-1560769629-975ec94e6a6f?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "DAMIAN LILLARD SHOES",
+        description: "Great style for training sessions.",
+        price: 5795,
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=85"
+    },
+    {
+        name: "ZION WILLIAMSON SHOES",
+        description: "Bold footwear with a modern look.",
+        price: 6595,
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=85"
+    },
+    {
+        name: "ANTA BASKETBALL SHOES",
+        description: "Contemporary athletic shoe style.",
+        price: 4595,
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=85"
+    },
+    {
+        name: "UNDER ARMOUR SHOES",
+        description: "Comfortable shoes for practice.",
+        price: 5295,
+        image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=85"
+    },
+    {
+        name: "NEW BALANCE SHOES",
+        description: "Casual athletic sneakers.",
+        price: 6195,
+        image: "https://images.unsplash.com/photo-1531310197839-ccf54634509e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        name: "CLASSIC COURT SHOES",
+        description: "Classic style for shoe collectors.",
+        price: 3995,
+        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=90"
+    }
+];
+
+// DISPLAY ALL PRODUCTS
+const productContainer = document.getElementById("products");
+
+shoes.forEach(function(shoe) {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.src = shoe.image;
+    img.alt = shoe.name;
+    img.loading = "lazy";
+
+    // SHOW FALLBACK IF AN IMAGE FAILS
+    img.onerror = function() {
+        this.onerror = null;
+        this.src =
+          "https://placehold.co/400x250/eeeeee/222222?text=Basketball+Shoes";
+    };
+
+    const title = document.createElement("h2");
+    title.textContent = shoe.name;
+
+    const description = document.createElement("p");
+    description.textContent = shoe.description;
+
+    const price = document.createElement("div");
+    price.className = "price";
+    price.textContent =
+        "₱ " + shoe.price.toLocaleString("en-PH") + ".00";
+
+    const button = document.createElement("button");
+    button.className = "buy";
+    button.textContent = "BUY NOW";
+
+    button.addEventListener("click", function() {
+        alert(
+            "Product: " + shoe.name +
+            "\nPrice: ₱" + shoe.price.toLocaleString("en-PH") +
+            "\n\nThis is a demo only. No purchase was made."
+        );
+    });
+
+    card.appendChild(img);
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(price);
+    card.appendChild(button);
+
+    productContainer.appendChild(card);
+});
+
+</script>
+
+</body>
+</html>
