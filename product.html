@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +24,7 @@ body {
     color: #111;
 }
 
+/* NAVIGATION BAR */
 nav {
     background: #ff0000;
     padding: 25px 10px;
@@ -41,11 +43,15 @@ nav a {
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
+    padding: 10px 5px;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: yellow;
 }
+
+/* EXIT BUTTON */
 nav .exit-btn {
     background: white;
     color: red;
@@ -60,6 +66,7 @@ nav .exit-btn:hover {
     border-color: #111;
 }
 
+/* MAIN CONTAINER */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -80,6 +87,7 @@ h1 {
     margin-bottom: 35px;
 }
 
+/* PRODUCTS GRID */
 .products {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -143,6 +151,7 @@ h1 {
     background: #b90000;
 }
 
+/* ABOUT AND CONTACT */
 .info-section {
     max-width: 1100px;
     margin: 35px auto 0;
@@ -165,6 +174,7 @@ footer {
     line-height: 2;
 }
 
+/* MOBILE RESPONSIVE */
 @media (max-width: 480px) {
     body {
         padding: 12px;
@@ -228,14 +238,19 @@ footer {
 </head>
 
 <body>
+
+<!-- NAVIGATION BAR -->
 <nav>
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#products">PRODUCT</a>
     <a href="#contact">CONTACT</a>
-    <a href="#home" class="exit-btn"
-       onclick="exitToHome(event)">EXIT</a>
+
+    <!-- EXIT GOES TO THE OTHER HOMEPAGE -->
+    <a href="index.html" class="exit-btn">EXIT</a>
 </nav>
+
+<!-- HOME SECTION -->
 <section class="container" id="home">
     <h1>👟 BASKETBALL SHOES!</h1>
 
@@ -245,6 +260,8 @@ footer {
 
     <div class="products" id="products"></div>
 </section>
+
+<!-- ABOUT SECTION -->
 <section class="info-section" id="about">
     <h2>ABOUT US</h2>
     <p>
@@ -253,10 +270,16 @@ footer {
         for basketball players and sneaker lovers.
     </p>
 </section>
-<footer id="contact">
-    <h2>Basketball Shoes Shop</h2>
+
+<!-- CONTACT SECTION -->
+<section class="info-section" id="contact">
+    <h2>CONTACT US</h2>
     <p>Thank you for visiting our website!</p>
-    <p>Contact us for more information.</p>
+    <p>Welcome to our Basketball Shoes Shop.</p>
+</section>
+
+<footer>
+    <h2>Basketball Shoes Shop</h2>
     <p>© 2026 Basketball Shoes Shop</p>
 </footer>
 
@@ -266,7 +289,7 @@ const shoes = [
         name: "JORDAN SHOES",
         description: "Stylish shoes for basketball players.",
         price: 8095,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80"
+        image: "https://images.unsplash.com/photo-1556906781-9a412961c28e?auto=format&fit=crop&w=600&q=80"
     },
     {
         name: "LEBRON JAMES SHOES",
@@ -432,24 +455,6 @@ shoes.forEach(function(shoe) {
 
     productContainer.appendChild(card);
 });
-
-function exitToHome(event) {
-    event.preventDefault();
-
-    const answer = confirm(
-        "Are you sure you want to return to HOME?"
-    );
-
-    if (answer) {
-        window.location.hash = "home";
-
-        document.getElementById("home").scrollIntoView({
-            behavior: "smooth"
-        });
-    }
-
-    return false;
-}
 </script>
 
 </body>
