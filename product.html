@@ -25,12 +25,13 @@ body {
 
 nav {
     background: #ff0000;
-    padding: 30px 10px;
+    padding: 25px 10px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 25px;
     margin-bottom: 35px;
     box-shadow: 0 5px 15px #900;
 }
@@ -38,12 +39,25 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
 }
 
 nav a:hover {
     color: yellow;
+}
+nav .exit-btn {
+    background: white;
+    color: red;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+nav .exit-btn:hover {
+    background: #111;
+    color: white;
+    border-color: #111;
 }
 
 .container {
@@ -122,11 +136,26 @@ h1 {
     padding: 15px 5px;
     font-size: 17px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .buy:hover {
     background: #b90000;
+}
+
+.info-section {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.info-section h2 {
+    color: red;
+    margin-bottom: 12px;
 }
 
 footer {
@@ -183,46 +212,55 @@ footer {
     }
 
     nav {
-        gap: 18px;
-        padding: 25px 5px;
+        gap: 12px;
+        padding: 20px 8px;
     }
 
     nav a {
-        font-size: 14px;
+        font-size: 13px;
+    }
+
+    nav .exit-btn {
+        padding: 10px 14px;
     }
 }
 </style>
 </head>
 
 <body>
-
 <nav>
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#products">PRODUCT</a>
     <a href="#contact">CONTACT</a>
+    <a href="#home" class="exit-btn"
+       onclick="exitToHome(event)">EXIT</a>
 </nav>
-
 <section class="container" id="home">
-
     <h1>👟 BASKETBALL SHOES!</h1>
 
-    <p class="subtitle" id="about">
+    <p class="subtitle">
         Browse our available basketball shoes.
     </p>
 
     <div class="products" id="products"></div>
-
 </section>
-
+<section class="info-section" id="about">
+    <h2>ABOUT US</h2>
+    <p>
+        Welcome to Basketball Shoes Shop!
+        We offer stylish and comfortable shoes
+        for basketball players and sneaker lovers.
+    </p>
+</section>
 <footer id="contact">
     <h2>Basketball Shoes Shop</h2>
     <p>Thank you for visiting our website!</p>
+    <p>Contact us for more information.</p>
     <p>© 2026 Basketball Shoes Shop</p>
 </footer>
 
 <script>
-
 const shoes = [
     {
         name: "JORDAN SHOES",
@@ -349,7 +387,6 @@ const shoes = [
 const productContainer = document.getElementById("products");
 
 shoes.forEach(function(shoe) {
-
     const card = document.createElement("div");
     card.className = "card";
 
@@ -361,7 +398,7 @@ shoes.forEach(function(shoe) {
     img.onerror = function() {
         this.onerror = null;
         this.src =
-          "https://placehold.co/400x250/eeeeee/222222?text=Basketball+Shoes";
+            "https://placehold.co/400x250?text=Basketball+Shoes";
     };
 
     const title = document.createElement("h2");
@@ -383,7 +420,7 @@ shoes.forEach(function(shoe) {
         alert(
             "Product: " + shoe.name +
             "\nPrice: ₱" + shoe.price.toLocaleString("en-PH") +
-            "\n\nThis is a demo only. No purchase was made."
+            "\n\nDemo only. No purchase was made."
         );
     });
 
@@ -396,6 +433,23 @@ shoes.forEach(function(shoe) {
     productContainer.appendChild(card);
 });
 
+function exitToHome(event) {
+    event.preventDefault();
+
+    const answer = confirm(
+        "Are you sure you want to return to HOME?"
+    );
+
+    if (answer) {
+        window.location.hash = "home";
+
+        document.getElementById("home").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+    return false;
+}
 </script>
 
 </body>
