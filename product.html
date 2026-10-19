@@ -1,406 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basketball Shoes Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>Basketball Shoes Shop</title>
 
-html {
-    scroll-behavior: smooth;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ff0000, #111111);
-    padding: 20px;
-    color: #111;
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
 
-nav {
-    background: #ff0000;
-    padding: 30px 10px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 35px;
-    box-shadow: 0 5px 15px #900;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #ff0808;
+            color: #222;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
+        /* NAVIGATION BAR */
+        .navbar {
+            width: 94%;
+            margin: 20px auto 45px;
+            padding: 25px 12px;
+            background: #ff0808;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 
-nav a:hover {
-    color: yellow;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 28px;
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    background: #00e5e5;
-    border-radius: 15px;
-    padding: 30px;
-}
+            position: sticky;
+            top: 8px;
+            z-index: 1000;
+        }
 
-h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 25px;
-}
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.subtitle {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 35px;
-}
+        .navbar a:hover,
+        .navbar a.active {
+            color: yellow;
+        }
 
+        /* MAIN SECTION */
+        .container {
+            width: 94%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 35px 25px;
+            background: #08d9d6;
+            border-radius: 28px;
+            min-height: 100vh;
+        }
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
+        section {
+            scroll-margin-top: 110px;
+            margin-bottom: 65px;
+        }
 
-.card {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 5px 12px #777;
-    display: flex;
-    flex-direction: column;
-    transition: 0.3s;
-    min-width: 0;
-}
+        /* HOME */
+        #home {
+            text-align: center;
+            padding: 0 0 35px;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-}
+        #home h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin: 0 auto 25px;
+            line-height: 1.25;
+        }
 
-.card img {
-    width: 100%;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 20px;
-    background: #f5f5f5;
-    border-radius: 8px;
-}
+        #home p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
 
-.card h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
 
-.card p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
+        .section-description {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
 
-.price {
-    font-size: 19px;
-    font-weight: bold;
-    margin-top: auto;
-    margin-bottom: 20px;
-}
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
 
-.buy {
-    width: 100%;
-    background: red;
-    color: white;
-    border: none;
-    padding: 15px 5px;
-    font-size: 17px;
-    cursor: pointer;
-    border-radius: 3px;
-}
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            padding: 22px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s;
+            min-width: 0;
+        }
 
-.buy:hover {
-    background: #b90000;
-}
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
 
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            background: #f5f5f5;
+            border-radius: 18px;
+            margin-bottom: 25px;
+        }
 
-footer {
-    color: white;
-    text-align: center;
-    padding: 30px 10px;
-    line-height: 2;
-}
+        .product-card h3 {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
 
+        .product-card p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
-@media (max-width: 480px) {
-    body {
-        padding: 12px;
-    }
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: auto;
+            margin-bottom: 25px;
+        }
 
-    .container {
-        padding: 16px;
-    }
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 17px 8px;
+            background: #ff0808;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            border-radius: 7px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    h1 {
-        font-size: 27px;
-    }
+        .buy-btn:hover {
+            background: #c90000;
+        }
 
-    .subtitle {
-        font-size: 17px;
-    }
+        /* ABOUT */
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
 
-    .products {
-        gap: 14px;
-    }
+        .info-box p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
 
-    .card {
-        padding: 12px;
-    }
+        /* CONTACT */
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+        }
 
-    .card img {
-        height: 110px;
-    }
+        .contact-box a {
+            color: #d00000;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
 
-    .card h2 {
-        font-size: 15px;
-    }
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
 
-    .card p {
-        font-size: 13px;
-    }
+        /* MOBILE PHONE */
+        @media (max-width: 480px) {
+            .navbar {
+                gap: 18px;
+                padding: 22px 8px;
+                margin-bottom: 35px;
+            }
 
-    .price {
-        font-size: 14px;
-    }
+            .navbar a {
+                font-size: 15px;
+            }
 
-    .buy {
-        font-size: 13px;
-        padding: 12px 3px;
-    }
+            .container {
+                padding: 28px 15px;
+            }
 
-    nav {
-        gap: 18px;
-        padding: 25px 5px;
-    }
+            .products {
+                gap: 15px;
+            }
 
-    nav a {
-        font-size: 14px;
-    }
-}
-</style>
+            .product-card {
+                padding: 13px;
+                border-radius: 22px;
+            }
+
+            .product-card img {
+                height: 125px;
+                margin-bottom: 18px;
+            }
+
+            .product-card h3 {
+                font-size: 16px;
+            }
+
+            .product-card p {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 16px;
+                margin-bottom: 18px;
+            }
+
+            .buy-btn {
+                font-size: 14px;
+                padding: 13px 4px;
+            }
+
+            #home p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .info-box {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#products">PRODUCT</a>
-    <a href="#contact">CONTACT</a>
-</nav>
-<section class="container" id="home">
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="#home" class="active">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#product">PRODUCT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
 
-    <h1>👟 BASKETBALL SHOES!</h1>
+    <main class="container">
 
-    <p class="subtitle" id="about">
-        Browse our available basketball shoes.
-    </p>
+        <!-- HOME SECTION -->
+        <section id="home">
+            <h1>👟 BASKETBALL SHOES!</h1>
+            <p>Browse our available basketball shoes.</p>
+        </section>
 
-    <div class="products" id="products"></div>
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2 class="section-title">ABOUT US</h2>
 
-</section>
+            <div class="info-box">
+                <p>
+                    Welcome to Basketball Shoes Shop! We offer
+                    stylish and comfortable basketball shoes
+                    for basketball players and shoe lovers.
+                </p>
 
+                <p>
+                    Explore our collection, check the prices,
+                    and choose the shoes that match your style.
+                </p>
+            </div>
+        </section>
 
-<footer id="contact">
-    <h2>Basketball Shoes Shop</h2>
-    <p>Thank you for visiting our website!</p>
-    <p>© 2026 Basketball Shoes Shop</p>
-</footer>
+        <!-- PRODUCT SECTION -->
+        <section id="product">
+            <h2 class="section-title">OUR PRODUCTS</h2>
 
-<script>
+            <p class="section-description">
+                Find your favorite basketball shoes below!
+            </p>
 
-const shoes = [
-    {
-        name: "JORDAN SHOES",
-        description: "Stylish shoes for basketball players.",
-        price: 8095,
-        image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "LEBRON JAMES SHOES",
-        description: "Comfortable athletic footwear.",
-        price: 10895,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "LAMELO BALL SHOES",
-        description: "Bold and modern sneaker style.",
-        price: 7295,
-        image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "STEPHEN CURRY SHOES",
-        description: "Sporty shoes for active players.",
-        price: 6495,
-        image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "NIKE BASKETBALL SHOES",
-        description: "Classic athletic design.",
-        price: 5995,
-        image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "ADIDAS BASKETBALL SHOES",
-        description: "Everyday comfort and sporty style.",
-        price: 5495,
-        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "PUMA BASKETBALL SHOES",
-        description: "Modern shoes for sports lovers.",
-        price: 4995,
-        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "KOBE SHOES",
-        description: "Performance-inspired shoe design.",
-        price: 9295,
-        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "KYRIE SHOES",
-        description: "Stylish footwear for quick players.",
-        price: 6995,
-        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "KEVIN DURANT SHOES",
-        description: "Comfortable shoes for court practice.",
-        price: 8795,
-        image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "GIANNIS SHOES",
-        description: "Sporty look for basketball fans.",
-        price: 7495,
-        image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "JA MORANT SHOES",
-        description: "Fresh and fashionable sneakers.",
-        price: 6295,
-        image: "https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "LUKA DONCIC SHOES",
-        description: "Designed for everyday athletic style.",
-        price: 7795,
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "JAYSON TATUM SHOES",
-        description: "Sleek and sporty basketball footwear.",
-        price: 6995,
-        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "DAMIAN LILLARD SHOES",
-        description: "Great style for training sessions.",
-        price: 5795,
-        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=85"
-    },
-    {
-        name: "ZION WILLIAMSON SHOES",
-        description: "Bold footwear with a modern look.",
-        price: 6595,
-        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=85"
-    },
-    {
-        name: "ANTA BASKETBALL SHOES",
-        description: "Contemporary athletic shoe style.",
-        price: 4595,
-        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=85"
-    },
-    {
-        name: "UNDER ARMOUR SHOES",
-        description: "Comfortable shoes for practice.",
-        price: 5295,
-        image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=85"
-    },
-    {
-        name: "NEW BALANCE SHOES",
-        description: "Casual athletic sneakers.",
-        price: 6195,
-        image: "https://images.unsplash.com/photo-1531310197839-ccf54634509e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        name: "CLASSIC COURT SHOES",
-        description: "Classic style for shoe collectors.",
-        price: 3995,
-        image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=90"
-    }
-];
+            <div class="products">
 
-const productContainer = document.getElementById("products");
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28e?auto=format&fit=crop&w=600&q=80"
+                         alt="Jordan style basketball shoes">
+                    <h3>JORDAN SHOES</h3>
+                    <p>Stylish shoes for basketball players.</p>
+                    <div class="price">₱ 8,095.00</div>
+                    <a class="buy-btn" href="#contact">BUY NOW</a>
+                </div>
 
-shoes.forEach(function(shoe) {
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+                         alt="Red athletic shoes">
+                    <h3>LEBRON JAMES SHOES</h3>
+                    <p>Comfortable athletic footwear.</p>
+                    <div class="price">₱ 10,895.00</div>
+                    <a class="buy-btn" href="#contact">BUY NOW</a>
+                </div>
 
-    const card = document.createElement("div");
-    card.className = "card";
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
+                         alt="Casual athletic shoes">
+                    <h3>NIKE BASKETBALL</h3>
+                    <p>Lightweight shoes for everyday training.</p>
+                    <div class="price">₱ 5,499.00</div>
+                    <a class="buy-btn" href="#contact">BUY NOW</a>
+                </div>
 
-    const img = document.createElement("img");
-    img.src = shoe.image;
-    img.alt = shoe.name;
-    img.loading = "lazy";
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80"
+                         alt="Modern sports shoes">
+                    <h3>ADIDAS BASKETBALL</h3>
+                    <p>Sporty style with a comfortable fit.</p>
+                    <div class="price">₱ 4,999.00</div>
+                    <a class="buy-btn" href="#contact">BUY NOW</a>
+                </div>
 
-    
-    img.onerror = function() {
-        this.onerror = null;
-        this.src =
-          "https://placehold.co/400x250/eeeeee/222222?text=Basketball+Shoes";
-    };
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=600&q=80"
+                         alt="Classic sneakers">
+                    <h3>CLASSIC COURT SHOES</h3>
+                    <p>A classic look for casual basketball fans.</p>
+                    <div class="price">₱ 3,899.00</div>
+                    <a class="buy-btn" href="#contact">BUY NOW</a>
+                </div>
 
-    const title = document.createElement("h2");
-    title.textContent = shoe.name;
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
+                         alt="Colorful sneakers">
+                    <h3>STREET BASKETBALL</h3>
+                    <p>Fresh streetwear-inspired athletic shoes.</p>
+                    <div class="price">₱ 4,299.00</div>
+                    <a class="buy-btn" href="#contact">BUY NOW</a>
+                </div>
 
-    const description = document.createElement("p");
-    description.textContent = shoe.description;
+            </div>
+        </section>
 
-    const price = document.createElement("div");
-    price.className = "price";
-    price.textContent =
-        "₱ " + shoe.price.toLocaleString("en-PH") + ".00";
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2 class="section-title">CONTACT US</h2>
 
-    const button = document.createElement("button");
-    button.className = "buy";
-    button.textContent = "BUY NOW";
+            <div class="info-box contact-box">
+                <p>
+                    Have questions about our products?
+                    Contact us using the details below.
+                </p>
 
-    button.addEventListener("click", function() {
-        alert(
-            "Product: " + shoe.name +
-            "\nPrice: ₱" + shoe.price.toLocaleString("en-PH") +
-            "\n\nThis is a demo only. No purchase was made."
-        );
-    });
+                <p>
+                    Email:
+                    <a href="mailto:basketballshoes@gmail.com">
+                        basketballshoes@gmail.com
+                    </a>
+                </p>
 
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(price);
-    card.appendChild(button);
+                <p>
+                    Phone: 09XX-XXX-XXXX
+                </p>
 
-    productContainer.appendChild(card);
-});
+                <p>
+                    Thank you for visiting Basketball Shoes Shop!
+                </p>
+            </div>
+        </section>
 
-</script>
+        <footer>
+            <p>© 2026 Basketball Shoes Shop</p>
+            <p>All rights reserved.</p>
+        </footer>
+
+    </main>
 
 </body>
-</html>
+    </html>
