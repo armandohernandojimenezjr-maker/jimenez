@@ -1,67 +1,211 @@
-<!Doctype.html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>About my page</title>
-<style>
- body {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background:
-linear-gradient(135deg,red 0%,white 30%,gray 50%,black 75%,cyan 100%);
-overflow: hidden;
-position: relative;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-.logo {
-width: 80px;
-height: 80px;
-margin: 20px auto;
-display: flex;
-justify-content: center;
-align-items: center;
+    <title>My Page</title>
 
-background: linear-gradient(
-135deg,
-#00ffff,
-#008cff
-);
--radius: 50%;
-box-shadow:0 8px 20px rgba(0, 140, 255, 0.4);
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-.logo span {
-            font-size: 40px;
+
+        body {
+            font-family: Georgia, serif;
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #ff0000 0%,
+                #ffffff 30%,
+                #555555 55%,
+                #000000 80%,
+                #00bfb5 100%
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px 15px;
         }
-.contact-box {
-	width: 450px;
-	margin: 100px;
-	padding: 30px;
-	background-color: cyan;
-	border-radius: 15px;
-	text-align: center;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0, 3,);
-	}
-</style>
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* BACK TO HOME */
+        .back-home {
+            display: inline-block;
+            margin-bottom: 65px;
+
+            color: #5b3470;
+            font-size: 15px;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .back-home:hover {
+            color: white;
+        }
+
+        /* CONTENT BOX */
+        .box {
+            width: 100%;
+            background-color: #00eeee;
+
+            padding: 35px 25px;
+            border-radius: 12px;
+
+            box-shadow: 0 8px 20px
+                rgba(0, 0, 0, 0.2);
+
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+        }
+
+        /* HEADING */
+        h1 {
+            font-size: 28px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #111111;
+        }
+
+        /* STAR LOGO */
+        .logo {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #00d9ff,
+                #008cff
+            );
+
+            font-size: 38px;
+
+            box-shadow: 0 5px 15px
+                rgba(0, 100, 255, 0.25);
+        }
+
+        /* DESCRIPTION */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222222;
+            overflow-wrap: break-word;
+        }
+
+        /* TABLET */
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 430px;
+            }
+
+            .back-home {
+                margin-bottom: 45px;
+            }
+
+            .box {
+                padding: 30px 22px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+        }
+
+        /* MOBILE PHONE */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 25px 15px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .back-home {
+                font-size: 13px;
+                margin-bottom: 65px;
+            }
+
+            .box {
+                padding: 28px 18px;
+                border-radius: 11px;
+            }
+
+            h1 {
+                font-size: 22px;
+                margin-bottom: 18px;
+            }
+
+            .logo {
+                width: 58px;
+                height: 58px;
+                font-size: 34px;
+                margin-bottom: 22px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <div class="navigation">
-        <a href="homepage.html" class="nav-btn">
-        <i class="fa-solid fa-house"></i>
-        ← Back to Home
+
+    <main class="container">
+
+        <!-- BACK TO HOMEPAGE -->
+        <a href="homepage.html" class="back-home">
+            ← Back to Home
         </a>
-        </div>
-    <center><div class="contact-box">
-	<h1>WELCOME TO MY PAGE!</h1>
-	<div class="logo">
-		<span>⭐</span>
-	</div>
-	<p>
-	<br>
-	this website is a space for growth and learning.
-	Every challenge is an opportunity to learn something new, develop your skills, discover your strengths, and become a better version of yourself. 
-	I hope this page inspires you to keep learning, stay motivated, and never be afraid to take on new challenges.
-	</p>
+
+        <!-- MAIN BOX -->
+        <section class="box">
+
+            <h1>WELCOME TO MY PAGE!</h1>
+
+            <div class="logo">⭐</div>
+
+            <p>
+                This website is a space for growth and learning.
+                Every challenge is an opportunity to learn something
+                new, develop your skills, discover your strengths,
+                and become a better version of yourself.
+                I hope this page inspires you to keep learning,
+                stay motivated, and never be afraid to take on
+                new challenges.
+            </p>
+
+        </section>
+
+    </main>
+
 </body>
 </html>
