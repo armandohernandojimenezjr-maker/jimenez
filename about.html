@@ -1,11 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About My Page</title>
 
     <style>
         * {
@@ -17,7 +16,6 @@
         body {
             font-family: Georgia, serif;
             min-height: 100vh;
-
             background: linear-gradient(
                 135deg,
                 #ff0000 0%,
@@ -26,46 +24,58 @@
                 #000000 80%,
                 #00bfb5 100%
             );
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            padding: 30px 15px;
+            padding-bottom: 40px;
         }
 
+        /* NAVIGATION BAR */
+        .navbar {
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: darkred;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ff0000;
+            transform: scale(1.05);
+        }
+
+        .navbar a.active {
+            color: #ff0000;
+            border-bottom: 3px solid #ff0000;
+        }
+
+        /* MAIN CONTENT */
         .container {
             width: 100%;
-            max-width: 500px;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 0 15px;
             text-align: center;
         }
 
-        
-        .back-home {
-            display: inline-block;
-            margin-bottom: 65px;
-
-            color: #5b3470;
-            font-size: 15px;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .back-home:hover {
-            color: white;
-        }
-
-    
         .box {
             width: 100%;
             background-color: #00eeee;
-
-            padding: 35px 25px;
-            border-radius: 12px;
-
-            box-shadow: 0 8px 20px
-                rgba(0, 0, 0, 0.2);
-
+            padding: 40px 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
 
@@ -73,119 +83,89 @@
             transform: translateY(-5px);
         }
 
-    
         h1 {
-            font-size: 28px;
+            font-size: 30px;
             line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #111111;
         }
 
         .logo {
-            width: 65px;
-            height: 65px;
-
+            width: 85px;
+            height: 85px;
             margin: 0 auto 25px;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             background: linear-gradient(
                 135deg,
                 #00d9ff,
                 #008cff
             );
-
-            font-size: 38px;
-
-            box-shadow: 0 5px 15px
-                rgba(0, 100, 255, 0.25);
+            font-size: 48px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,100,255,0.25);
         }
 
-
         p {
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 19px;
+            line-height: 1.7;
             color: #222222;
             overflow-wrap: break-word;
         }
 
-    
-        @media screen and (max-width: 768px) {
-            .container {
-                max-width: 430px;
-            }
-
-            .back-home {
-                margin-bottom: 45px;
-            }
-
-            .box {
-                padding: 30px 22px;
-            }
-
-            h1 {
-                font-size: 25px;
-            }
-
-            p {
-                font-size: 15px;
-                line-height: 1.5;
-            }
-        }
-
-
+        /* MOBILE DESIGN */
         @media screen and (max-width: 480px) {
-            body {
-                padding: 25px 15px;
+            .navbar {
+                padding: 16px 4px;
+                gap: 2px;
+            }
+
+            .navbar a {
+                font-size: 12px;
+                padding: 4px 2px;
             }
 
             .container {
-                max-width: 100%;
-            }
-
-            .back-home {
-                font-size: 13px;
-                margin-bottom: 65px;
+                margin: 30px auto;
+                padding: 0 15px;
             }
 
             .box {
-                padding: 28px 18px;
-                border-radius: 11px;
+                padding: 30px 20px;
+                border-radius: 14px;
             }
 
             h1 {
-                font-size: 22px;
-                margin-bottom: 18px;
+                font-size: 23px;
             }
 
             .logo {
-                width: 58px;
-                height: 58px;
-                font-size: 34px;
-                margin-bottom: 22px;
+                width: 65px;
+                height: 65px;
+                font-size: 38px;
             }
 
             p {
-                font-size: 14px;
-                line-height: 1.4;
+                font-size: 16px;
+                line-height: 1.6;
             }
         }
-
     </style>
 </head>
 
 <body>
 
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="homepage.html">🏠 HOME</a>
+        <a href="about.html" class="active">ⓘ ABOUT</a>
+        <a href="product.html">🛍️ PRODUCT</a>
+        <a href="contact.html">✉ CONTACT</a>
+    </nav>
+
+    <!-- ABOUT CONTENT -->
     <main class="container">
-
-    
-        <a href="homepage.html" class="back-home">
-            ← Back to Home
-        </a>
-
-    
         <section class="box">
 
             <h1>WELCOME TO MY PAGE!</h1>
@@ -203,8 +183,8 @@
             </p>
 
         </section>
-
     </main>
 
 </body>
-</html>
+    </html>
+    
